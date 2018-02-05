@@ -10,7 +10,6 @@ from opentracing.propagation import Format
 from flask import Flask, request
 from opentracing.ext import tags
   
-install_all_patches()
 
 if __name__ == '__main__':
         app = Flask(__name__)

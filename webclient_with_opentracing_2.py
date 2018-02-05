@@ -10,17 +10,17 @@ from jaeger_client import Config
 
 install_all_patches()
 
-config = Config(config={'sampler':{'type': 'const','param': 1},'logging': True},service_name="jaeger_opentracing_example2")
-tracer = config.initialize_tracer()
+#config = Config(config={'sampler':{'type': 'const','param': 1},'logging': True},service_name="jaeger_opentracing_example2")
+#tracer = config.initialize_tracer()
 
 url = 'http://localhost:4999/log2'
 
-span = tracer.start_span('TestSpan')
+#span = tracer.start_span('TestSpan')
 
-span.set_tag(tags.HTTP_METHOD, 'GET') 
-span.set_tag(tags.HTTP_URL, url)
-span.set_tag(tags.SPAN_KIND, tags.SPAN_KIND_RPC_CLIENT) 
-headers = {}
-tracer.inject(span, Format.HTTP_HEADERS, headers)
-print(headers)
+#span.set_tag(tags.HTTP_METHOD, 'GET') 
+#span.set_tag(tags.HTTP_URL, url)
+#span.set_tag(tags.SPAN_KIND, tags.SPAN_KIND_RPC_CLIENT) 
+#headers = {}
+#tracer.inject(span, Format.HTTP_HEADERS, headers)
+#print(headers)
 r = requests.get(url)
