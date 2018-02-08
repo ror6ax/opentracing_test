@@ -34,6 +34,8 @@ if __name__ == '__main__':
                 child_span = ls_tracer.start_span("python webserver internal span of log2", child_of=span_ctx, tags=span_tags)
                 child_span.finish()
                 return "log2"
-        
-        
+
+		
+		
         app.run(debug=True, port=4999)
+		
